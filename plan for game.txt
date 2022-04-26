@@ -1,0 +1,21 @@
+Game of choice: tic tac toe (maybe too simple)
+
+Must stick to similar to derek style (with the files etc.)
+Must have a clean coding style
+Must be able to REFACTOR maybe a function at one point (this must be recorded in a commit or whatever)
+Must have adapter design pattern used
+Must use a stub
+Must use a mock
+Must use a fake
+Must use unit tests and have a good coverage
+Must have a usable game
+
+Classes:
+player
+computer
+main games logic
+main (just for calling stuff and actually running the program)
+adapter design stuff
+
+ideas: maybe if too simple can make a login system or at the very least
+being able to name the player
