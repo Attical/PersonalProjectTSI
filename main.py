@@ -14,3 +14,4 @@ class Main:
 if __name__ == '__main__':
     Main.main()
     
+#IMPORTANT COMMENT, I SHOULD PROBABLY GO THROUGH ALL CODE AND COMMENT IT FOR CLEAN CODING MARKS

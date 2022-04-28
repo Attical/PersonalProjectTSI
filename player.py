@@ -14,7 +14,6 @@ class Player:
         return playerXorO
 
     def getPosition():
-        role = Player.assignRole()
         position = input("Choose where you would like to place, type a row (t/m/b) with a number. For example m3")
 
         listOfPosition = []
@@ -23,13 +22,7 @@ class Player:
 
         return listOfPosition
 
-    def placeInPosition():
-        listOfPosition = Player.getPosition()
-        row = listOfPosition[0]
-        value = listOfPosition[1]
-
-        print(row, value)
-
+    
 #ideas for testing:
 # assignROles() check if truly random
 
