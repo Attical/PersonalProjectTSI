@@ -1,7 +1,11 @@
 import random
 
-class Player:
-    def assignRole():
+class Player():
+    def __init__(self, display, input_adaptor):
+        self.display = display
+        self.input = input_adaptor
+
+    def assignRole(self):
         playerXorO = random.randint(1,2)
 
         if playerXorO == 1:
@@ -9,12 +13,12 @@ class Player:
         else:
             playerXorO = "x"
 
-        print("You have been assigned %s" % playerXorO)
+        self.display.display("You have been assigned %s" % playerXorO)
 
         return playerXorO
 
-    def getPosition():
-        position = input("Choose where you would like to place, type a row (t/m/b) with a number. For example m3")
+    def getPosition(self):
+        position = self.input.get_string("Choose where you would like to place, type a row (t/m/b) with a number: ")
 
         listOfPosition = []
         for x in position:

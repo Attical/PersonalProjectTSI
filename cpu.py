@@ -1,7 +1,7 @@
 import random
 
 class Cpu:
-    def getRole(playerRole):
+    def getRole(self, playerRole):
         if playerRole == "x":
             cpuRole = "o"
         if playerRole == "o":
@@ -9,14 +9,14 @@ class Cpu:
 
         return cpuRole
 
-    def isSpaceAvailable(board, row, value):
+    def isSpaceAvailable(self, board, row, value):
         if board[row][value-1] == "":
             return True
         if board[row][value-1] != "":
             return False
             
 
-    def getPosition(board):
+    def getPosition(self, board):
         listOfPosition = []
 
         available = False
@@ -31,7 +31,7 @@ class Cpu:
             if row == 3:
                 row = "b"
 
-            available = Cpu.isSpaceAvailable(board, row, value)
+            available = self.isSpaceAvailable(board, row, value)
 
         listOfPosition.append(row)
         listOfPosition.append(value)
