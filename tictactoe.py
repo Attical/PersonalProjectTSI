@@ -50,45 +50,52 @@ class TicTacToe:
 
         return board
     
-    def checkGameState(board):
-        #if any three of x/o are matching, state = true (have to figure out who the winner is)
-        state = True
-        #horizontal win state
+    def horizontalState(board): #horizontal win state
+        state = False
         for x in board:
             if board[x][0] != "":
                 if board[x][0] == board[x][1] == board[x][2]:
-                    state = False
+                    state = True
+        return state
 
-        #vertical win state
+    def verticalState(board):
+        state = False
         for x in range(0,2):
             if board["t"][x] != "":
                 if board["t"][x] == board["m"][x] == board["b"][x]:
-                    state = False
+                    state = True
+        return state
 
-        #diagonal win state
+    def diagonalState(board):
+        state = False
         if board["m"][1] != "":
             if board["t"][0] == board["m"][1] == board["b"][2] or board["t"][2] == board["m"][1] == board["b"][0]:
-                state = False
-        
-        #draw state
+                state = True
+        return state
+
+    def drawState(board):
+        state = False
         counter = 0
         for x in board:
             for y in board[x]:
                 if y != "":
                     counter += 1
         if counter == 9:
-            state = False
+            state = True
 
-        #state = true if game isnt over
-        #state = false if game is over
         return state
 
     while game == True:
         board = placeInPosition(board, playerRole, "player")
 
-        game = checkGameState(board)
-        if game == False:
+        hor = horizontalState(board)
+        ver = verticalState(board)
+        dia = diagonalState(board)
+        draw = drawState(board)
+
+        if hor or ver or dia or draw:
             showBoard(board)
+            game = False
             break
         
         board = placeInPosition(board, cpuRole, "cpu") 
