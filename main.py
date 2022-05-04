@@ -8,7 +8,6 @@ class Main:
         cpu = Cpu()
         tictactoe = TicTacToe(player, cpu)
         
-
         #probably display and input adapter stuff here
 
 if __name__ == '__main__':

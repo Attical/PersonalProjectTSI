@@ -2,6 +2,8 @@ from player import Player
 from cpu import Cpu
 
 class TicTacToe:
+    game = True
+
     def __init__(self, player, cpu):
         self.player = player
         self.cpu = cpu #ngl this isnt nescasary since it is never used?
@@ -47,20 +49,53 @@ class TicTacToe:
             board["b"][int(value)-1] = role
 
         return board
-
-    board = placeInPosition(board, playerRole, "player") #test for player
-    showBoard(board)
-
-    board = placeInPosition(board,cpuRole, "cpu") #test for cpu
-    showBoard(board)
-
-    #place = input("select where you wanna place X")
-
-    #functions:
-    #showdefaultboard
-    #updateboard (on play from player/cpu class)
-
-    #ideas for testing:
     
-#until game finished:
-    #placeInPosition
+    def checkGameState(board):
+        #if any three of x/o are matching, state = true (have to figure out who the winner is)
+        state = True
+        #horizontal win state
+        for x in board:
+            if board[x][0] != "":
+                if board[x][0] == board[x][1] == board[x][2]:
+                    state = False
+
+        #vertical win state
+        for x in range(0,2):
+            if board["t"][x] != "":
+                if board["t"][x] == board["m"][x] == board["b"][x]:
+                    state = False
+
+        #diagonal win state
+        if board["m"][1] != "":
+            if board["t"][0] == board["m"][1] == board["b"][2] or board["t"][2] == board["m"][1] == board["b"][0]:
+                state = False
+        
+        #draw state
+        counter = 0
+        for x in board:
+            for y in board[x]:
+                if y != "":
+                    counter += 1
+        if counter == 9:
+            state = False
+
+        #state = true if game isnt over
+        #state = false if game is over
+        return state
+
+    while game == True:
+        board = placeInPosition(board, playerRole, "player")
+
+        game = checkGameState(board)
+        if game == False:
+            showBoard(board)
+            break
+        
+        board = placeInPosition(board, cpuRole, "cpu") 
+        showBoard(board)
+        
+    
+    print("Game finished")
+
+
+    
