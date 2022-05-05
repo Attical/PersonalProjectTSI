@@ -14,15 +14,12 @@ class Main:
 
         playerRole = player.assignRole()
         board = tictactoe.createDefaultBoard()
-        display.display("Welcome to TicTacToe!") #use display adaptor
+        display.display("Welcome to TicTacToe!") 
         tictactoe.showBoard(board)
         cpuRole = cpu.getRole(playerRole)
 
         tictactoe.runGame(playerRole, cpuRole, board)
 
-        #probably display and input adapter stuff here
 
 if __name__ == '__main__':
     Main.main()
-    
-#IMPORTANT COMMENT, I SHOULD PROBABLY GO THROUGH ALL CODE AND COMMENT IT FOR CLEAN CODING MARKS

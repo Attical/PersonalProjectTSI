@@ -9,7 +9,7 @@ from cpu import Cpu
 from display import *
 from input import *
 
-class test_mock(unittest.TestCase):
+class tests_mock(unittest.TestCase):
     def test_diaState(self):
         display = ConsoleDisplay()
         input_adaptor = ConsoleInput()
@@ -99,4 +99,3 @@ class test_mock(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
-#gotta implement using side_effect

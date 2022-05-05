@@ -24,7 +24,7 @@ class TicTacToe():
             print(board[x][0], "|", board[x][1], "|", board[x][2]) 
         self.display.display("\n")
 
-    def placeInPosition(self, board, role, user): #this function could probably work for both CPU and Player
+    def placeInPosition(self, board, role, user):
         if user == "player":
             listOfPosition = self.player.getPosition()
             row = listOfPosition[0]
@@ -46,7 +46,7 @@ class TicTacToe():
 
         return board
     
-    def horizontalState(self, board): #horizontal win state
+    def horizontalState(self, board):
         state = False
         for x in board:
             if board[x][0] != "":

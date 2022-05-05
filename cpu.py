@@ -21,7 +21,7 @@ class Cpu:
 
         available = False
         while available == False:
-            row = random.randint(1,3) #1= t1, 2= t2 etc.
+            row = random.randint(1,3) 
             value = random.randint(1,3)
 
             if row == 1:
@@ -37,7 +37,3 @@ class Cpu:
         listOfPosition.append(value)
 
         return listOfPosition #[t,2] for example
-
-
-    #can maybe use inheritance from player class? to avoid more rewriting + big brain
-    #can do multiple tests for if the cpu logic works as intended
