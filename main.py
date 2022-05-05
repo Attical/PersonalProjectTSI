@@ -18,7 +18,7 @@ class Main:
         tictactoe.showBoard(board)
         cpuRole = cpu.getRole(playerRole)
 
-        tictactoe.runGame(playerRole,cpuRole, board)
+        tictactoe.runGame(playerRole, cpuRole, board)
 
         #probably display and input adapter stuff here
 

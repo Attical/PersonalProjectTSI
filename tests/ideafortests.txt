@@ -1,0 +1,14 @@
+mock: can fake a certain board position so that testing could be done on that mock to see if for example:
+-can test game states
+-test turn?
+-test player being x or o? (idk)
+
+
+stub: uses the display interface and forces to return a certain message? maybe
+
+
+faking: use the INPUT interface to create a fake input and then see what the response of that would be
+-for example if the player who is X enters t3, what would happen to the board?
+
+
+unit test coverage: just make for as much as I can
